@@ -166,28 +166,28 @@ const Cantantes = () => {
 
     const customExcel = () => {
 
-        if(this.props.exportCsv) {
-        this.props.exportCsv(this.props.columns, this.props.renderData)
-        }
-        else  {
-            const columns = this.props.columns
-              .filter(columnDef => {
-                return !columnDef.hidden && columnDef.field && columnDef.export !== false; 
-              });
+        // if(this.props.exportCsv) {
+        // this.props.exportCsv(this.props.columns, this.props.renderData)
+        // }
+        // else  {
+        //     const columns = this.props.columns
+        //       .filter(columnDef => {
+        //         return !columnDef.hidden && columnDef.field && columnDef.export !== false; 
+        //       });
         
-            const data = this.props.renderData.map(rowData =>
-              columns.map(columnDef => rowData[columnDef.field])
-            );
+        //     const data = this.props.renderData.map(rowData =>
+        //       columns.map(columnDef => rowData[columnDef.field])
+        //     );
         
-            // eslint-disable-next-line no-unused-vars
-            const builder = new CsvBuilder((this.props.exportFileName || this.props.title || 'data') + '.csv')
-              .setDelimeter(this.props.exportDelimiter)
-              .setColumns(columns.map(columnDef => columnDef.title))
-              .addRows(data)
-              .exportFile();
+        //     // eslint-disable-next-line no-unused-vars
+        //     const builder = new CsvBuilder((this.props.exportFileName || this.props.title || 'data') + '.csv')
+        //       .setDelimeter(this.props.exportDelimiter)
+        //       .setColumns(columns.map(columnDef => columnDef.title))
+        //       .addRows(data)
+        //       .exportFile();
         
-            this.setState({ exportButtonAnchorEl: null });
-          }
+        //     this.setState({ exportButtonAnchorEl: null });
+        //   }
         }
 
 
